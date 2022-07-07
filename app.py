@@ -1,21 +1,14 @@
-class Vector(object):
-    def __init__(self, coordinates):
-        try:
-            if not coordinates:
-                raise ValueError
-            self.coordinates = tuple(coordinates)
-            self.dimension = len(coordinates)
+#Complete the mean function to make it return the mean of a list of numbers
 
-        except ValueError:
-            raise ValueError('The coordinates must be nonempty')
+data1=[49., 66, 24, 98, 37, 64, 98, 27, 56, 93, 68, 78, 22, 25, 11]
 
-        except TypeError:
-            raise TypeError('The coordinates must be an iterable')
+def mean(data):
+    total = 0
+    mean = None
+    #Insert your code here
+    for data_set in data:
+        total = total + data_set
+        mean = total/len(data)
+    return mean
 
-
-    def __str__(self):
-        return 'Vector: {}'.format(self.coordinates)
-
-
-    def __eq__(self, v):
-        return self.coordinates == v.coordinates
+print(mean(data1))
